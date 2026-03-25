@@ -20,9 +20,9 @@ public class DoubleLinkedList {
             head = newNode;
             tail = newNode;
         }else{
-            newNode.next = head;
-            head.prev = newNode;
-            head = newNode;
+            newNode.next = head; //aponta o novo Nó para o head
+            head.prev = newNode; //aponta o head para o novo Nó
+            head = newNode; //transforma o novo Nó no novo head
         }
         size++;
     }
@@ -33,9 +33,9 @@ public class DoubleLinkedList {
             head = newNode;
             tail = newNode;
         }else{
-            newNode.prev = tail;
-            tail.next = newNode;
-            tail = newNode;
+            newNode.prev = tail; //aponta o novo Nó para a tail
+            tail.next = newNode; //aponta a tail para o novo Nó
+            tail = newNode; //transforma o novo Nó na nova tail
         }
         size++;
     }
@@ -49,6 +49,7 @@ public class DoubleLinkedList {
         Node temp = head;
         System.out.println("---------------------");
         System.out.println("Lista encadeada");
+        //percore toda a lista partindo do head
         while (temp != null){
             System.out.println(temp.data);
             temp = temp.next;
@@ -61,7 +62,9 @@ public class DoubleLinkedList {
     public void printJustIfHaveMoreThanFiveLetter(){
         Node temp = head;
         System.out.println("meses com mais de 5 letras");
+        //percore toda a lista partindo do head
         while (temp != null){
+            //verifica se o tamanho do mes tem mais de 5 caracteres
             if (temp.data.length() > 5){
                 System.out.println(temp.data);
             }
